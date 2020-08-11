@@ -8,10 +8,10 @@ permalink: /doc/en/lb4/LoopBack-types.html
 
 ## Overview
 
-When defining a model in LoopBack 4, property types is the important part. No
-matter for defining properties with decorator `@property` or defining a model at
-runtime, you may want to specify the types in the definition. This is how we
-typically do:
+When defining a model in LoopBack 4, property types are the important part. No
+matter where it is for defining properties with decorator `@property` or
+defining a model at runtime, you may want to specify the types in the
+definition. The following is a typical property definition:
 
 **Defining a property with the decorator**
 
@@ -168,8 +168,7 @@ types, for example a string or an array.
 
 A model often has properties that consist of other properties. For example, the
 user model can have an `address` property that is in type `Address`, which has
-properties `street`, `city`, `state`, and `zipCode`. //LoopBack allows inline
-declaration of such properties, for example:
+properties `street`, `city`, `state`, and `zipCode`:
 
 ```ts
 @model()
@@ -193,8 +192,8 @@ export class User extends Entity {
 }
 ```
 
-The value of the address is the definition of the `address` type.
+The value of the address is the definition of the `Address` type.
 
 {% include important.html content="
-The user model has to reference the Address constructor or the model name - `'Address'`.
+The user model has to reference the Address constructor or import the model - `'Address'`.
 " %}
